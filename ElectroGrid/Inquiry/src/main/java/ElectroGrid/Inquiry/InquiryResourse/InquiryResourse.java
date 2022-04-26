@@ -58,7 +58,7 @@ public class InquiryResourse {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response updateInquiry(Inquiry inquiry,@PathParam("id")String id) throws ClassNotFoundException, SQLException {
 		
-		Inquiry updateInquiry =InquiryService.updateInquiry(inquiry, id);
+		Inquiry updateInquiry =InquiryService.updateInquiry(inquiry,id);
 		return Response.status(Status.OK).entity("Update Successfully.").build();
 		}
 		
