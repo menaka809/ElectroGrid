@@ -1,5 +1,6 @@
 package ElectroGrid.CustomerInformationManagement.constant;
 
+
 public class CustomerConstant {
 	public static String GETALLCUSTOMER = "select customerName,customerPhoneNo,email,houseNo,street,city,zipCode,serviceStartDate from customer";
 	public static String CREATECUSTOMER = "insert into customer  values (?,?,?,?,?,?,?,?,?)";
