@@ -7,6 +7,7 @@ public class UserUsageInformation {
 	private String address;
 	private int noOfUnit;
 	private String month;
+
 	
 	public UserUsageInformation() {
 		super();
@@ -43,6 +44,7 @@ public class UserUsageInformation {
 
 	public void setAddress(String address) {
 		this.address = address;
+		
 	}
 
 	public int getNoOfUnit() {
