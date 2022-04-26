@@ -21,6 +21,7 @@ public class UserUsageInformationController {
 
 				PreparedStatement preparedStatement = con.prepareStatement(getQury);
 				ResultSet rs = preparedStatement.executeQuery();
+				
 
 				while(rs.next()) {
 					UserUsageInformation usageInformation = new UserUsageInformation();
