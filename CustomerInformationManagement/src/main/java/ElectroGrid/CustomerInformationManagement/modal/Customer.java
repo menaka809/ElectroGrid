@@ -11,6 +11,8 @@ public class Customer {
 	private String zipCode;
 	private String serviceStartDate;
 	
+
+	
 	public Customer() {
 		
 	}
