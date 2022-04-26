@@ -11,6 +11,7 @@ public class DatabaseConnection {
 		//add local user name password to connect database
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/electrogrid","root","oop@12"); //Enter database name
 		
+		
 		return con;
 	}
 
