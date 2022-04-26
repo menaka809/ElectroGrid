@@ -13,7 +13,7 @@ import ElectroGrid.Inquiry.model.Inquiry;
 
 public class InquiryService {
 	
-	//Get All the Inquiry
+	//Get All the Inquiry details
 	public static List<Inquiry> getAllInquiry() throws ClassNotFoundException, SQLException{
 		
 		
