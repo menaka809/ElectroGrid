@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 import ElectroGrid.CustomerInformationManagement.constant.Constant;
 import ElectroGrid.CustomerInformationManagement.constant.CustomerConstant;
 import ElectroGrid.CustomerInformationManagement.modal.Customer;
