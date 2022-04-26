@@ -6,5 +6,6 @@ public class UserUsageInformationConstant {
 	public static String GETUSERUSAGEINFORMATIONBYID = "SELECT * FROM userpowerusageinformation WHERE usageID = ?";
 	public static String UPDATEUSERUSAGEINFORMATION = "UPDATE userpowerusageinformation SET usageID = ? , userName = ? , address = ? , noOfUnit = ? , month = ? WHERE usageID = ?";
 	public static String DELETEUSERUSAGEINFORMATION = "DELETE FROM userpowerusageinformation WHERE usageID = ?";
+	
 
 }
