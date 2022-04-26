@@ -1,0 +1,3 @@
+INDEX VERSION 1.131
+C:\Users\Malindu Jethaka\Desktop\ElectroGrid\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\342346926.index
+\Inquiry\src\main\java

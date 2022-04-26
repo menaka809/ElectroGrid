@@ -1,0 +1,28 @@
+package InquiryResourse;
+
+import java.util.List;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import model.Inquiry;
+import service.InquiryService;
+
+@Path("/inquiries")
+public class InquiryResourse {
+	
+	
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+//	
+//	public List<Inquiry>getInquiry(){
+//		return InquiryService.getAllInquiry();
+//		
+//	}
+	public String getmessage() {
+		return "hello";
+	}
+
+}

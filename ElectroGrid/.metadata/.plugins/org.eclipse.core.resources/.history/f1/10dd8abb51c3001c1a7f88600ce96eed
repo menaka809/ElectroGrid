@@ -1,0 +1,49 @@
+package ElectroGrid.Inquiry.service;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import DB.DatabaseConnection;
+import ElectroGrid.Inquiry.model.Inquiry;
+
+public class InquiryService {
+	
+	public static List<Inquiry> getAllInquiry() throws ClassNotFoundException, SQLException{
+		
+		
+		Connection con=DatabaseConnection.getConnection();
+		String query="select * from inquiry ";
+		PreparedStatement preparedstatement=con.prepareStatement(query);
+		ResultSet result = preparedstatement.executeQuery(query);
+		List<Inquiry> list=new ArrayList<>();
+		while(result.next()) {
+			 Inquiry inquiry=new Inquiry();
+			 inquiry.setInquiryId(result.getInt(1));
+			 inquiry.setCustomerName(result.getString(2));
+			 	
+				
+			 list.add(inquiry);
+			
+		
+		}
+	
+		
+		 return list;
+	}
+	
+	public static boolean deleteInquiry(int id) throws ClassNotFoundException, SQLException {
+		Connection con=DatabaseConnection.getConnection();
+		String query="delete from inquiry where inquiryId='+inquiryId+' ";
+		Statement  statement=con.createStatement();
+		int result = statement.executeUpdate(query);
+		if(result>0)
+			return true;
+		else
+			return false;
+	}
+}

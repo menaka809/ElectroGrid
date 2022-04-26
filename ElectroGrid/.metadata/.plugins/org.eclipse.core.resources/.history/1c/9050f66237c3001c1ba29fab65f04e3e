@@ -1,0 +1,31 @@
+package model;
+
+public class Inquiry {
+	
+	private int inquiryId;
+	private String customerName;
+	public Inquiry() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Inquiry(int inquiryId, String customerName) {
+		super();
+		this.inquiryId = inquiryId;
+		this.customerName = customerName;
+	}
+	public int getInquiryId() {
+		return inquiryId;
+	}
+	public void setInquiryId(int inquiryId) {
+		this.inquiryId = inquiryId;
+	}
+	public String getCustomerName() {
+		return customerName;
+	}
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+	
+	
+
+}

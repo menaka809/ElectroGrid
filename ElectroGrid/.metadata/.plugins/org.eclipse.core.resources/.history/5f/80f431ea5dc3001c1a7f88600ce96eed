@@ -1,0 +1,103 @@
+package ElectroGrid.Inquiry.service;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import DB.DatabaseConnection;
+import ElectroGrid.Inquiry.model.Inquiry;
+
+public class InquiryService {
+	
+	public static List<Inquiry> getAllInquiry() throws ClassNotFoundException, SQLException{
+		
+		
+		Connection con=DatabaseConnection.getConnection();
+		String query="select * from inquiry ";
+		PreparedStatement preparedstatement=con.prepareStatement(query);
+		ResultSet result = preparedstatement.executeQuery(query);
+		List<Inquiry> list=new ArrayList<>();
+		while(result.next()) {
+			 Inquiry inquiry=new Inquiry();
+			 inquiry.setInquiryId(result.getInt(1));
+			 inquiry.setCustomerName(result.getString(2));
+			 	
+				
+			 list.add(inquiry);
+			
+		
+		}
+	
+		
+		 return list;
+	}
+	public static ArrayList<Inquiry> getOneInquiry(String id) throws ClassNotFoundException, SQLException{
+		
+		
+		Connection con=DatabaseConnection.getConnection();
+		String query="select * from inquiry where inquiryId='"+id+"'";
+		PreparedStatement preparedstatement=con.prepareStatement(query);
+		ResultSet result = preparedstatement.executeQuery(query);
+		ArrayList<Inquiry> list=new ArrayList<>();
+		while(result.next()) {
+			 Inquiry inquiry=new Inquiry();
+			 inquiry.setInquiryId(result.getInt(1));
+			 inquiry.setCustomerName(result.getString(2));
+			 	
+				
+			 list.add(inquiry);
+			
+		
+		}
+	
+		
+		 return list;
+	}
+	public static Inquiry createInquiry(Inquiry inquiry) throws ClassNotFoundException, SQLException {
+		Connection con=DatabaseConnection.getConnection();
+		String query="insert into  inquiry values(?,?) ";
+		PreparedStatement preparedstatement=con.prepareStatement(query);
+		
+		preparedstatement.setInt(1, inquiry.getInquiryId());
+		preparedstatement.setString(2, inquiry.getCustomerName());
+		
+		boolean isCreate=preparedstatement.execute();
+		if(!isCreate) {
+			return inquiry;
+		}else {
+			return null;
+		}
+		
+		
+	}
+	
+	public static Inquiry updateInquiry(Inquiry inquiry,String id) throws ClassNotFoundException, SQLException {
+		Connection con=DatabaseConnection.getConnection();
+		String query="update inquiry set customerName?  where inquiryId='"+id+"' ";
+		PreparedStatement preparedstatement=con.prepareStatement(query);
+//		preparedstatement.setInt(1, inquiry.getInquiryId());
+		preparedstatement.setString(1, inquiry.getCustomerName());
+		int isUpdate=preparedstatement.executeUpdate(query);
+		if(isUpdate>0) {
+			return inquiry;
+		}else {
+			return null;
+		}
+		
+		
+	}
+	public static boolean deleteInquiry(int id) throws ClassNotFoundException, SQLException {
+		Connection con=DatabaseConnection.getConnection();
+		String query="delete from inquiry where inquiryId='"+id+"' ";
+		Statement  statement=con.createStatement();
+		int result = statement.executeUpdate(query);
+		if(result>0)
+			return true;
+		else
+			return false;
+	}
+}
