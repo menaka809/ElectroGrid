@@ -72,7 +72,7 @@ public class InquiryResourse {
 	public Response deleteInquiry(@PathParam("id")String id) throws ClassNotFoundException, SQLException {
 		boolean deleteInquiry =InquiryService.deleteInquiry(id);
 		if (deleteInquiry==true) {
-			return Response.status(Status.OK).entity("Delete Successfully").build();
+			return Response.status(Status.OK).entity("Delete Successfully.").build();
 		}else {
 			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("Delete UnSuccessfully").build();
 		}
