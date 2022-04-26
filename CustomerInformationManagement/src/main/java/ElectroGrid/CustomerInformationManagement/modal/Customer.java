@@ -1,5 +1,5 @@
 package ElectroGrid.CustomerInformationManagement.modal;
-
+//customer model 
 public class Customer {
 	private int cusId;
 	private String customerName;
@@ -12,7 +12,7 @@ public class Customer {
 	private String serviceStartDate;
 	
 
-	
+
 	public Customer() {
 		
 	}
